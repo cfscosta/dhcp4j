@@ -46,9 +46,9 @@ public abstract class AddressOption extends DhcpOption {
         try {
             return (Inet4Address) Inet4Address.getByAddress(getData());
         } catch (ClassCastException e) {
-            throw new DhcpException("Illegal InetAddress data: " + Arrays.toString(getData()) + " for " + this, e);
+            throw new DhcpException("Illegal InetAddress data: " + Arrays.toString(getData()), e);
         } catch (UnknownHostException e) {
-            throw new DhcpException("Illegal InetAddress data: " + Arrays.toString(getData()) + " for " + this, e);
+            throw new DhcpException("Illegal InetAddress data: " + Arrays.toString(getData()), e);
         }
     }
 
